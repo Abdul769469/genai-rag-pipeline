@@ -1,0 +1,79 @@
+Acme Robotics — Employee Handbook & Company Policies
+
+Company history
+Acme Robotics was founded in 2016 by a team of former industrial engineers
+who believed warehouse automation was too expensive and too rigid for
+mid-sized businesses. The company shipped its first commercial unit, the
+Acme Mover V1, in 2019. By 2023, Acme Robotics had deployed over 4,000
+robots across 300 warehouses in 12 countries. The company is headquartered
+in Austin, Texas, with a secondary engineering office in Krakow, Poland.
+
+Remote work policy
+Acme Robotics operates a hybrid work model for corporate staff. Employees
+are expected to be in the office at least three days per week: Tuesday,
+Wednesday, and Thursday. Monday and Friday are flexible remote days.
+Engineering and manufacturing staff working directly on the production
+floor are not eligible for remote work due to the hands-on nature of
+robot assembly and testing.
+
+Vacation and leave policy
+Full-time employees accrue 18 days of paid vacation per year, increasing
+to 23 days after three years of tenure. Employees can carry over up to
+5 unused vacation days into the following year; anything beyond that is
+forfeited. Acme Robotics also offers 10 paid sick days annually and up to
+12 weeks of paid parental leave for both primary and secondary caregivers.
+
+Expense reimbursement
+Employees traveling for work-related purposes (client site visits,
+conferences, training) can submit expenses through the internal Concur
+portal within 30 days of the expense being incurred. Meals are capped at
+$75 per day when traveling domestically and $100 per day internationally.
+Reimbursement typically takes 5-7 business days after approval.
+
+Equipment and software provisioning
+New employees receive a laptop, monitor, and any role-specific hardware
+(e.g. safety goggles and a tablet for warehouse technicians) within their
+first week. Software licenses are provisioned automatically based on team
+membership; requests for additional tools go through the IT ticketing
+system and are typically approved within 48 hours.
+
+Performance review cycle
+Performance reviews happen twice a year, in June and December. Each cycle
+includes a self-assessment, manager feedback, and peer feedback from at
+least two colleagues. Compensation adjustments and promotions are
+typically decided following the December cycle, with changes taking
+effect the following February.
+
+Customer support tiers
+Acme Robotics offers three support tiers for customers who purchase Acme
+Mover fleets. The Standard tier includes email support with a 24-hour
+response time and quarterly software updates. The Priority tier adds
+phone support with a 4-hour response time and monthly on-site health
+checks. The Enterprise tier includes a dedicated account engineer, a
+1-hour response time SLA, and access to beta features like predictive
+maintenance alerts before they're released to other tiers.
+
+Warranty details
+All Acme Mover units include a standard 12-month warranty covering
+manufacturing defects in hardware and software. Customers on the
+Enterprise support tier receive an extended 36-month warranty at no
+additional cost. Wear-and-tear items like wheels and battery packs are
+covered for the first 12 months only, after which replacement parts can
+be purchased through the Acme Robotics parts portal.
+
+Sustainability initiatives
+Acme Robotics committed to carbon-neutral manufacturing by 2027. As of
+2024, the Austin manufacturing facility runs on 60% solar power generated
+on-site, with the remainder sourced from renewable energy contracts. The
+company also runs a robot refurbishment program: units returned after a
+customer upgrade are refurbished and resold at a discount rather than
+scrapped, which reduced e-waste by an estimated 40 tons in 2023 alone.
+
+Data privacy and security
+Telemetry data collected by Acme Mover units (location, battery status,
+task logs) is encrypted in transit and at rest, and is retained for 90
+days by default unless a customer requests a longer retention period for
+analytics purposes. Acme Robotics does not sell customer telemetry data to
+third parties. Customers can request full data deletion by contacting
+privacy@acmerobotics.com, and requests are processed within 30 days in
+compliance with GDPR and CCPA requirements.

@@ -1,0 +1,31 @@
+Acme Robotics — Frequently Asked Questions
+
+What does Acme Robotics do?
+Acme Robotics designs and manufactures autonomous warehouse robots that help
+companies move inventory faster and more accurately. Our flagship product,
+the Acme Mover, can navigate warehouses without pre-installed floor markers.
+
+What is the battery life of the Acme Mover?
+The Acme Mover runs for approximately 10 hours on a single charge under
+typical warehouse workloads. It uses opportunity charging, meaning it tops
+up its battery automatically whenever it is idle for more than two minutes.
+
+How does the Acme Mover avoid collisions?
+The robot uses a combination of LIDAR, depth cameras, and ultrasonic sensors
+to build a real-time 3D map of its surroundings. If an obstacle appears in
+its path, it recalculates a new route within 200 milliseconds.
+
+What warehouse sizes are supported?
+The Acme Mover fleet can be deployed in warehouses ranging from 10,000 square
+feet to over 2 million square feet. Larger deployments use a fleet
+coordination system called Acme Hive to prevent traffic jams between robots.
+
+What is the return policy for defective units?
+Any unit found to be defective within 12 months of delivery will be repaired
+or replaced free of charge. Customers should contact support@acmerobotics.com
+with the unit's serial number to start the process.
+
+Does Acme Robotics offer training for warehouse staff?
+Yes. Every deployment includes a two-day on-site training program covering
+robot supervision, basic troubleshooting, and how to use the Acme Hive
+dashboard to monitor the fleet in real time.

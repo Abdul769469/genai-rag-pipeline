@@ -1,0 +1,52 @@
+[
+  {
+    "question": "How long does the Acme Mover battery last?",
+    "expected_source": "company_faq.txt",
+    "expected_keyword": "10 hours"
+  },
+  {
+    "question": "What safety certification does the robot have?",
+    "expected_source": "product_specs.txt",
+    "expected_keyword": "ANSI"
+  },
+  {
+    "question": "What is the return policy for defective units?",
+    "expected_source": "company_faq.txt",
+    "expected_keyword": "12 months"
+  },
+  {
+    "question": "How many vacation days do employees get?",
+    "expected_source": "employee_handbook.txt",
+    "expected_keyword": "18"
+  },
+  {
+    "question": "How long is customer telemetry data retained?",
+    "expected_source": "employee_handbook.txt",
+    "expected_keyword": "90 days"
+  },
+  {
+    "question": "What is the top speed of the Acme Mover?",
+    "expected_source": "product_specs.txt",
+    "expected_keyword": "2.2"
+  },
+  {
+    "question": "How many support tiers does Acme Robotics offer?",
+    "expected_source": "employee_handbook.txt",
+    "expected_keyword": "three"
+  },
+  {
+    "question": "What is the maximum payload capacity?",
+    "expected_source": "product_specs.txt",
+    "expected_keyword": "500kg"
+  },
+  {
+    "question": "When was Acme Robotics founded?",
+    "expected_source": "employee_handbook.txt",
+    "expected_keyword": "2016"
+  },
+  {
+    "question": "How many warehouses has Acme deployed robots in?",
+    "expected_source": "employee_handbook.txt",
+    "expected_keyword": "300"
+  }
+]

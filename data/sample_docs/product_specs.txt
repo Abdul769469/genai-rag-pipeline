@@ -1,0 +1,26 @@
+Acme Mover — Technical Specifications
+
+Dimensions and weight
+The Acme Mover measures 80cm x 60cm x 40cm and weighs 95kg when unloaded.
+Its maximum payload capacity is 500kg on a flat, dry warehouse floor.
+
+Navigation system
+Navigation relies on SLAM (Simultaneous Localization and Mapping) combined
+with a fleet-wide coordination layer. No floor tape, magnets, or QR-code
+markers are required for setup.
+
+Speed and maneuverability
+Top speed is 2.2 meters per second when carrying a full payload, and up to
+3.5 meters per second when empty. The turning radius is 0.9 meters, which
+allows operation in standard warehouse aisles as narrow as 1.8 meters.
+
+Connectivity
+Each unit connects to the warehouse network over Wi-Fi 6 and reports
+telemetry to the Acme Hive dashboard every 500 milliseconds. A cellular
+backup connection is available as an optional add-on for facilities with
+unreliable Wi-Fi coverage.
+
+Safety certifications
+The Acme Mover is certified under ANSI/ITSDF B56.5 for safety standards
+of driverless, automatic guided industrial vehicles, and includes an
+emergency stop button on all four sides of the chassis.
