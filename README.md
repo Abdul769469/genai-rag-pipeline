@@ -7,7 +7,7 @@ documents by retrieving relevant chunks and asking an LLM (served by
 that context — and includes an automated evaluation suite to measure how
 well it actually works.
 
-**Retrieval accuracy: 10/10 · Answer accuracy: 10/10** — see [Evaluation](#evaluation) below.
+**Retrieval accuracy: 10/10 · Answer accuracy: 9/10** — see [Evaluation](#evaluation) below.
 
 ```
 Documents -> Chunking -> Embeddings -> Vector index (FAISS)
