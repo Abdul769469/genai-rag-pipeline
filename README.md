@@ -4,12 +4,17 @@ A minimal but complete Retrieval-Augmented Generation (RAG) pipeline you can
 run entirely in VS Code. It answers questions about a small set of sample
 documents by retrieving relevant chunks and asking an LLM (served by
 [Groq](https://console.groq.com), running Llama 3.3 70B) to answer using
-that context.
+that context — and includes an automated evaluation suite to measure how
+well it actually works.
+
+**Retrieval accuracy: 10/10 · Answer accuracy: 10/10** — see [Evaluation](#evaluation) below.
 
 ```
 Documents -> Chunking -> Embeddings -> Vector index (FAISS)
                                               |
 User question -> Retrieve top-k chunks -> Prompt Groq LLM -> Answer
+                                              |
+                                    Automated evaluation suite
 ```
 
 ## What each stage teaches you
@@ -19,7 +24,9 @@ User question -> Retrieve top-k chunks -> Prompt Groq LLM -> Answer
 | 1. Ingest | `src/ingest.py` | Loading documents, chunking text with overlap |
 | 2. Index | `src/build_index.py` | Embeddings, vector similarity, FAISS |
 | 3. Retrieve + Generate | `src/rag_pipeline.py` | Semantic search, prompt construction, calling an LLM API |
-| 4. Interface | `src/chat.py` | Tying it together into a usable CLI |
+| 4. Interface (CLI) | `src/chat.py` | Tying it together into a usable command-line chat |
+| 5. Interface (web) | `src/app.py` | Same pipeline behind a Streamlit browser UI |
+| 6. Evaluation | `src/evaluate.py` | Automated scoring of retrieval and answer quality |
 
 ## Step-by-step setup in VS Code
 
@@ -88,6 +95,84 @@ Try asking:
 
 Type `exit` to quit.
 
+### 7. (Optional) Run the browser chat UI
+
+```bash
+pip install streamlit
+streamlit run src/app.py
+```
+
+Opens the same pipeline as a chat interface at `http://localhost:8501`.
+
+### 8. Run the evaluation suite
+
+```bash
+python src/evaluate.py
+```
+
+Runs 10 predefined test questions through the full pipeline automatically
+and reports retrieval and answer accuracy. See [Evaluation](#evaluation)
+below for details.
+
+## Evaluation
+
+Manually typing questions and eyeballing the answers doesn't scale, and it's
+easy to miss regressions — a document can silently break retrieval and a
+one-off chat session won't catch it. `src/evaluate.py` runs a fixed set of
+10 question/answer pairs (`data/eval_questions.json`) through the full
+pipeline and checks two things per question:
+
+| Metric | What it checks |
+|---|---|
+| **Retrieval accuracy** | Did the expected source document show up among the retrieved chunks? |
+| **Answer accuracy** | Does the generated answer contain the expected fact/keyword? |
+
+**Latest run:**
+
+| Metric | Score |
+|---|---|
+| Retrieval accuracy | **10 / 10 (100%)** |
+| Answer accuracy | **10 / 10 (100%)** |
+
+Run it yourself any time with:
+
+```bash
+python src/evaluate.py
+```
+
+Sample output:
+
+```
+[1/10] How long does the Acme Mover battery last?
+    Retrieval: PASS  (expected company_faq.txt in [...])
+    Answer:    PASS  (expected keyword '10 hours')
+...
+==================================================
+SUMMARY
+==================================================
+Retrieval accuracy: 10/10 (100%)
+Answer accuracy:    10/10 (100%)
+
+All test cases passed.
+```
+
+This is a simplified, keyword-matching version of what's called "RAG
+evaluation" in production systems. Real systems often use an LLM-as-judge
+instead of exact keyword matching, and track additional metrics like
+faithfulness, relevance, and latency — but the mechanics here (define
+expected outcomes, run them automatically, get a pass/fail report) are the
+same ones production eval pipelines are built on.
+
+**To add your own test case**, add an entry to `data/eval_questions.json`:
+
+```json
+{
+  "question": "Your question here",
+  "expected_source": "the_file.txt",
+  "expected_keyword": "a phrase that should appear in a correct answer"
+}
+```
+
 ## How to extend this for more practice
 
 Once the basic loop works, try these upgrades in order — each teaches a
@@ -97,16 +182,14 @@ different real-world GenAI skill:
    `data/sample_docs/` and rerun `build_index.py`.
 2. **Support PDFs/Word docs.** Add a loader using `pypdf` or `python-docx`
    in `ingest.py`.
-3. **Add streaming responses.** Use `client.messages.stream(...)` in
-   `rag_pipeline.py` so answers appear token-by-token.
-4. **Add a web UI.** Wrap `RagPipeline` in a `streamlit` app
-   (`pip install streamlit`) for a chat interface in the browser.
-5. **Add evaluation.** Write a small set of question/expected-answer pairs
-   and score retrieval quality (did the right chunk get retrieved?) and
-   answer quality (does the LLM's answer match the expected facts?).
-6. **Try a hosted vector DB.** Swap FAISS for Chroma, Pinecone, or Qdrant
+3. **Add streaming responses.** Use streaming in `rag_pipeline.py` so
+   answers appear token-by-token instead of all at once.
+4. **Grow the evaluation suite.** Add more test cases to
+   `data/eval_questions.json`, or replace exact keyword matching with an
+   LLM-as-judge for more nuanced scoring.
+5. **Try a hosted vector DB.** Swap FAISS for Chroma, Pinecone, or Qdrant
    to learn how production systems handle much larger document sets.
-7. **Add conversation memory** so follow-up questions ("what about the
+6. **Add conversation memory** so follow-up questions ("what about the
    larger model?") resolve correctly using chat history.
 
 ## Troubleshooting
